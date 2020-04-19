@@ -21,12 +21,15 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/2humusic.mp3"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/metro4/build/css/metro-all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -85,9 +88,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/2humusic.mp3"
             ],
             "styles": [
+              "node_modules/metro4/build/css/metro-all.min.css",
               "src/styles.css"
             ],
             "scripts": []
