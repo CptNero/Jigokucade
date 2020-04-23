@@ -26,7 +26,7 @@ export class DataService {
     {id: 3, gameId: 2, commenterName: "Joe", commentBody:  "Time of my life!", sentOn: this.now},
     {id: 4, gameId: 2,commenterName: "lightwitheangle", commentBody: "Mi ez a szar", sentOn: this.now},
     {id: 5, gameId: 3,commenterName: "Rotordált", commentBody: "Szilvás buktát mert azt szeretem", sentOn: this.now},
-    {id: 6, gameId: 3,commenterName: "QualifiedVideoGameJournalist", commentBody: "It's like skyrim without skyrim", sentOn: this.now}
+    {id: 6, gameId: 3,commenterName: "QualifiedVideoGameJournalist99", commentBody: "It's like skyrim without skyrim", sentOn: this.now}
   ];
 
   constructor() { }
