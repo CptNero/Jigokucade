@@ -1,0 +1,18 @@
+<br/>
+<br/>
+<br/>
+<div class="flex-grid">
+  <div class="row flex-justify-center">
+    <canvas #board class="game-board tetris-bg"></canvas>
+    <div class="right-column">
+      <div>
+        <h1 class="fg-white">TETRIS</h1>
+        <p  class="fg-white">Score: {{ points }}</p>
+        <p  class="fg-white">Lines: {{ lines }}</p>
+        <p  class="fg-white">Level: {{ level }}</p>
+        <canvas #next class="next"></canvas>
+      </div>
+      <button (click)="play()" class="play-button">Play</button>
+    </div>
+  </div>
+</div>

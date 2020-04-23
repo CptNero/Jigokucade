@@ -1,0 +1,37 @@
+<div class="container tetris-bg">
+<form [formGroup]="sendCommentForm" (ngSubmit)="onSubmit(sendCommentForm.value)">
+  <div class="form-group">
+    <label class="fg-white" for="commenterName">
+      Name
+    </label>
+    <input id="commenterName" type="text" formControlName="commenterName" required>
+  </div>
+
+  <div class="form-group">
+    <label class="fg-white" for="commentBody">
+      Comment:
+    </label>
+    <input id="commentBody" type="text" formControlName="commentBody" required>
+  </div>
+
+  <div class="form-group">
+    <button class="button" type="submit">Send</button>
+  </div>
+</form>
+
+
+<div *ngFor="let comment of comments">
+  <div *ngIf="currentGameId == comment.gameId" class="card fg-white card-background">
+    <div class="card-header fg-white card-background">
+      {{comment.commenterName}}
+    </div>
+    <div class="card-content p-2 fg-white card-background">
+      {{comment.commentBody}}
+    </div>
+    <div class="card-footer fg-white card-background">
+      {{comment.sentOn}}
+    </div>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="hero hero-bg text-center">
+
+  <div class="display4 fg-white"><span class="reduce-3">Choose your poison</span></div>
+
+</div>
+
+<div class="grid">
+  <div class="form-group container">
+  <label class="fg-white"> Search
+    <input type="text" [(ngModel)]="searchName" placeholder="Search by name">
+    <input type="text" [(ngModel)]="searchYear" placeholder="Search by year">
+    <input type="text" [(ngModel)]="searchGenre" placeholder="Search by genre">
+  </label>
+  </div>
+  <div class="row">
+    <div *ngFor="let game of games | filter : searchName : searchYear : searchGenre" class="cell-3">
+      <div class="card image-header ">
+        <div class="card-header fg-white"
+             [ngStyle]="{'backgroundImage': 'url('+game.image+')'}">
+          {{game.name}}
+        </div>
+        <div class="card-content p-2 card-background">
+          <p>Release Date: {{game.year}}</p>
+          <p>Genre: {{game.genre}}</p>
+          <p class="fg-white">{{game.description}}</p>
+        </div>
+        <div class="card-footer card-background">
+          <a [routerLink]="['/game', game.id]" routerLinkActive="active"
+             class="button large outline secondary rounded fg-white">Play</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
