@@ -14,7 +14,7 @@ export class SoundService {
     if(!this.isPlaying){
       let audio;
       audio = new Audio();
-      audio.src = 'assets/2humusic.mp3';
+      audio.src = '/assets/sound/2humusic.mp3';
       audio.load();
       audio.play();
       this.isPlaying = true;
