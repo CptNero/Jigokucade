@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: super-legend-boy;
+  src: url(assets/fonts/superlegendboy.ttf) format("opentype");
+}
+
+* {
+  font-family: 'super-legend-boy', serif !important;
+}
+
+body{
+  background-image: url("assets/images/background.png");
+}
+
+.white-text{
+  color: white;
+}
+
+.card-background{
+  background: #121212;
+  color: white;
+}
+
+.tetris-bg{
+  background-color: #121212;
+}
