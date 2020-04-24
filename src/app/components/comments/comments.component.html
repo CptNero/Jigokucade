@@ -5,14 +5,16 @@
         Name
       </label>
       <input id="commenterName" class="form-control" type="text" formControlName="commenterName">
-      <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">Name must be 2 characters long at least.</span>
+      <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">
+        Name must be 2 characters long at least.</span>
       <br/>
 
       <label class="fg-white" for="commentBody">
         Comment:
       </label>
       <input id="commentBody" class="form-control" type="text" formControlName="commentBody">
-      <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">Comment must be 2 characters long at least.</span>
+      <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">
+        Comment must be 2 characters long at least.</span>
     </div>
 
     <div class="form-group">
