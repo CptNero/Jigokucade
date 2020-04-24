@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data/data.service";
 import {Comment} from "../../models/comment";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import { Router, ActivatedRoute, ParamMap} from "@angular/router";
+import {commentValidator} from "./comment-validator";
 
 @Component({
   selector: 'app-comments',
@@ -12,18 +13,16 @@ import { Router, ActivatedRoute, ParamMap} from "@angular/router";
 export class CommentsComponent implements OnInit {
 
   comments: Comment[];
+  comment: Comment = new Comment(0,0,"", "", new Date());
   currentGameId: number;
-  sendCommentForm;
+  commentForm;
 
   constructor(
     private dataService: DataService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
   ) {
-    this.sendCommentForm = this.formBuilder.group({
-      commenterName: '',
-      commentBody: '',
-    });
+    this.commentForm = this.createFormGroup();
   }
 
   ngOnInit(): void {
@@ -36,6 +35,13 @@ export class CommentsComponent implements OnInit {
     console.log(this.currentGameId);
   }
 
+  createFormGroup() {
+    return new FormGroup({
+      commenterName: new FormControl('', [Validators.required, commentValidator]),
+      commentBody: new FormControl('', [Validators.required, commentValidator]),
+    });
+  }
+
   onSubmit(commentData) {
     this.comments.push(new Comment(
       Math.floor(Math.random() * Math.floor(1000)),
@@ -45,7 +51,15 @@ export class CommentsComponent implements OnInit {
       this.dataService.Now
     ));
 
-    this.sendCommentForm.reset();
+    this.commentForm.reset();
+  }
+
+  get commenterName() {
+    return this.commentForm.get('commenterName');
+  }
+
+  get commentBody() {
+    return this.commentForm.get('commentBody');
   }
 
 }

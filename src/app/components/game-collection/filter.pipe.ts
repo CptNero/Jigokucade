@@ -11,17 +11,18 @@ export class FilterPipe implements PipeTransform {
     if(!searchName && !searchYear && !searchGenre) return games;
 
     if(searchName){
-      return games.filter(game =>
+      games = games.filter(game =>
         game.name.toLowerCase().indexOf(searchName.toLowerCase()) !== -1)
     }
     if(searchYear){
-      return games.filter(game =>
+      games = games.filter(game =>
         game.year.toLowerCase().indexOf(searchYear.toLowerCase()) !== -1)
     }
     if(searchGenre){
-      return games.filter(game =>
+      games = games.filter(game =>
         game.genre.toLowerCase().indexOf(searchGenre.toLowerCase()) !== -1)
     }
 
+    return games;
   }
 }

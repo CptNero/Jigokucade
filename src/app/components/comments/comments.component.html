@@ -1,37 +1,38 @@
 <div class="container tetris-bg">
-<form [formGroup]="sendCommentForm" (ngSubmit)="onSubmit(sendCommentForm.value)">
-  <div class="form-group">
-    <label class="fg-white" for="commenterName">
-      Name
-    </label>
-    <input id="commenterName" type="text" formControlName="commenterName" required>
-  </div>
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit(commentForm.value)">
+    <div class="form-group">
+      <label class="fg-white" for="commenterName">
+        Name
+      </label>
+      <input id="commenterName" class="form-control" type="text" formControlName="commenterName">
+      <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">Name must be 2 characters long at least.</span>
+      <br/>
 
-  <div class="form-group">
-    <label class="fg-white" for="commentBody">
-      Comment:
-    </label>
-    <input id="commentBody" type="text" formControlName="commentBody" required>
-  </div>
-
-  <div class="form-group">
-    <button class="button" type="submit">Send</button>
-  </div>
-</form>
-
-
-<div *ngFor="let comment of comments">
-  <div *ngIf="currentGameId == comment.gameId" class="card fg-white card-background">
-    <div class="card-header fg-white card-background">
-      {{comment.commenterName}}
+      <label class="fg-white" for="commentBody">
+        Comment:
+      </label>
+      <input id="commentBody" class="form-control" type="text" formControlName="commentBody">
+      <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">Comment must be 2 characters long at least.</span>
     </div>
-    <div class="card-content p-2 fg-white card-background">
-      {{comment.commentBody}}
+
+    <div class="form-group">
+      <button class="button" type="submit" [disabled]="!commentForm.valid">Send</button>
     </div>
-    <div class="card-footer fg-white card-background">
-      {{comment.sentOn}}
+  </form>
+
+
+  <div *ngFor="let comment of comments">
+    <div *ngIf="currentGameId == comment.gameId" class="card fg-white card-background">
+      <div class="card-header fg-white card-background">
+        {{comment.commenterName}}
+      </div>
+      <div class="card-content p-2 fg-white card-background">
+        {{comment.commentBody}}
+      </div>
+      <div class="card-footer fg-white card-background">
+        {{comment.sentOn | date:'medium'}}
+      </div>
     </div>
   </div>
-</div>
 </div>
 

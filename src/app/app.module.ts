@@ -10,7 +10,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { TetrisComponent } from './components/tetris/tetris.component';
 import {FilterPipe} from "./components/game-collection/filter.pipe";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     NgMetro4Module
