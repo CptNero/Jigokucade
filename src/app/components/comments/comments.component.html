@@ -4,7 +4,7 @@
       <label class="fg-white" for="commenterName">
         Name
       </label>
-      <input id="commenterName" class="form-control" type="text" formControlName="commenterName">
+      <input id="commenterName" class="form-control" type="text" (keydown)="$event.stopPropagation()" formControlName="commenterName">
       <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">
         Name must be 2 characters long at least.</span>
       <br/>
@@ -12,7 +12,7 @@
       <label class="fg-white" for="commentBody">
         Comment:
       </label>
-      <input id="commentBody" class="form-control" type="text" formControlName="commentBody">
+      <textarea id="commentBody" class="form-control" type="text" (keydown)="$event.stopPropagation()" formControlName="commentBody"> </textarea>
       <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">
         Comment must be 2 characters long at least.</span>
     </div>
