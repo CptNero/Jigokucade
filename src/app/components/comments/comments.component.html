@@ -1,25 +1,36 @@
 <div class="container tetris-bg">
   <form [formGroup]="commentForm" (ngSubmit)="onSubmit(commentForm.value)">
-    <div class="form-group">
-      <label class="fg-white" for="commenterName">
-        Name
-      </label>
-      <input id="commenterName" class="form-control" type="text" (keydown)="$event.stopPropagation()" formControlName="commenterName">
-      <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">
+
+    <div class="form-control">
+
+      <mat-form-field color="accent">
+        <mat-label class="fg-white" for="commenterName">
+          Name
+        </mat-label>
+        <input matNativeControl matInput class="this_one_fucking_input" id="commenterName" type="text" (keydown)="$event.stopPropagation()"
+               formControlName="commenterName">
+        <span class="fg-red" *ngIf="commenterName.touched && commenterName.invalid && commenterName.errors.required">
         Name must be 2 characters long at least.</span>
+        <br/>
+      </mat-form-field>
       <br/>
 
-      <label class="fg-white" for="commentBody">
-        Comment:
-      </label>
-      <textarea id="commentBody" class="form-control" type="text" (keydown)="$event.stopPropagation()" formControlName="commentBody"> </textarea>
-      <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">
+      <mat-form-field>
+        <mat-label class="fg-white" for="commentBody">
+          Comment:
+        </mat-label>
+        <textarea matNativeControl matInput id="commentBody" type="text" (keydown)="$event.stopPropagation()"
+                  formControlName="commentBody"> </textarea>
+        <span class="fg-red" *ngIf="commentBody.touched && commentBody.invalid && commentBody.errors.required">
         Comment must be 2 characters long at least.</span>
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <button class="button" type="submit" [disabled]="!commentForm.valid">Send</button>
+      <br/>
+      <button mat-button class="button" type="submit" [disabled]="!commentForm.valid">Send</button>
     </div>
+
   </form>
 
 

@@ -11,6 +11,10 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { TetrisComponent } from './components/tetris/tetris.component';
 import {FilterPipe} from "./components/game-collection/filter.pipe";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    NgMetro4Module
+    NgMetro4Module,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

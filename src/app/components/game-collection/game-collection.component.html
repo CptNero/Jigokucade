@@ -5,12 +5,19 @@
 </div>
 
 <div class="grid">
-  <div class="form-group container">
-  <label class="fg-white"> Search
-    <input type="text" [(ngModel)]="searchName" placeholder="Search by name">
-    <input type="text" [(ngModel)]="searchYear" placeholder="Search by year">
-    <input type="text" [(ngModel)]="searchGenre" placeholder="Search by genre">
-  </label>
+  <div class="container">
+
+  <mat-label class="fg-white"> Search </mat-label> <br/>
+    <mat-form-field appearance="fill">
+    <input matInput type="text"  [(ngModel)]="searchName" placeholder="By name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+    <input matInput type="text"  [(ngModel)]="searchYear" placeholder="By year">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+    <input matInput type="text"  [(ngModel)]="searchGenre" placeholder="By genre">
+    </mat-form-field>
+
   </div>
   <div class="row">
     <div *ngFor="let game of games | filter : searchName : searchYear : searchGenre" class="cell-3">
