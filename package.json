@@ -42,7 +42,7 @@
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "metro4": "^4.3.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-metro4": "^2.0.0",
     "ngx-bootstrap": "^5.6.1",
     "popper.js": "^1.16.1",
